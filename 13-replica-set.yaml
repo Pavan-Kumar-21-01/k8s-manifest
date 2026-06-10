@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: ReplicaSet
-metadada:
+metadata:
   name: zomato
   labels:
     app: zomato
