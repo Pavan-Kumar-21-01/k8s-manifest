@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadada:
+  name: zomato
+  labels:
+    app: zomato
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: zomato
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: zomato
+        tier: frontend
+    spec:
+      containers:
+      - name: nginx-cont
+        image: nginx
