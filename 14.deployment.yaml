@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swiggy-deply
+  labels:
+    app: swiggy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: swiggy
+      tier: app
+  template:
+    metadata:
+      labels:
+        app: swiggy
+        tier: app
+    spec:
+      containers:
+      - name: nginx-cont
+        image: sreeharshav/rollingupdate:v1
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: swiggy-np
+spec:
+  selector:
+    app: swiggy
+    tier: app
+  type: NordPort
+  ports:
+  - port: 80
+    targetPort: 80
