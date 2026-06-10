@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-np
+spec:
+  selector:
+    app: zomato
+  ports:
+  - name: np
+    port: 80
+    targetPort: 80
+  type: NodePort
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: zomato-app
+  labels:
+    app: zomato
+spec:
+  containers:
+  - name: nginx-cont
+    image: nginx
