@@ -29,7 +29,8 @@ spec:
   selector:
     app: swiggy
     tier: app
-  type: NordPort
   ports:
-  - port: 80
+  - name: np
+    port: 80
     targetPort: 80
+  type: NodePort
