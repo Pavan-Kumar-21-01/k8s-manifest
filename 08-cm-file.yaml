@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cm-file
+spec:
+  containers:
+  - name: cm
+    image: nginx
+    envFrom:
+    - configMapRef:
+        name: nginx-config
