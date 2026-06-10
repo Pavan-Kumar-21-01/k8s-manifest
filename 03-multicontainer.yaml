@@ -8,4 +8,4 @@ spec:
     image: nginx
   - name: c2
     image: almalinux:9 
-    command: "sleep200"
+    command: ["sleep200"]
