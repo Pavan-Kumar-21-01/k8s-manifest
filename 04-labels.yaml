@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginxpod
+  labels:
+    app: expense
+    project: exp-frontend
+    module: frontend
+    env: dev
+spec:
+  containers:
+  - name: nginx-cont
+    image: nginx
+    
