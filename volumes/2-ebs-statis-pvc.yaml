@@ -23,7 +23,7 @@ spec:
     topology.kubernetes.io/zone: us-east-1b
   containers:
   - name: nginx
-    image: nginx
+    image: sreeharshav/rollingupdate:v1
     volumeMounts:
     - name: persistent-storage
       mountPath: /usr/share/nginx/html
