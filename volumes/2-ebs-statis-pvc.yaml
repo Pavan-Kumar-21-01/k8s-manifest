@@ -10,7 +10,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 15Gi
+      storage: 10Gi
 ---
 apiVersion: v1
 kind: Pod
@@ -21,7 +21,7 @@ metadata:
 spec:
   containers:
   - name: nginx
-    image: sreeharshav/rollingupdate:v1
+    image: nginx
     volumeMounts:
     - name: persistent-storage
       mountPath: /usr/share/nginx/html
